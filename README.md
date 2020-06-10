@@ -2,7 +2,7 @@
 
 In this assignment we were tasked to create a calculator console application. Upon startup, it will printout a menu with available mathematical options. The user will then be prompted to enter an input of which operation they would like ot perform, such as in the following:
 
-Main Menu
+Main Menu:
 1) Add
 2) Subtract
 3) Multiply
