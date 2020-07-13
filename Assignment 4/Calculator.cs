@@ -17,8 +17,6 @@ namespace Assignment_4.Services
         /// <returns>Returns the sum of all the numbers.</returns>
         public double Add(params double[] operands)
         {
-            checkForInvalidAndNullOrEmptyValuesForOperands(operands);
-
             var result = operands.Sum();
 
             return result;
@@ -31,8 +29,6 @@ namespace Assignment_4.Services
         /// <returns>Returns the difference of all the numbers.</returns>
         public double Subtract(params double[] operands)
         {
-            checkForInvalidAndNullOrEmptyValuesForOperands(operands);
-
             double result = 0;
 
             int counter = 1;
@@ -60,8 +56,6 @@ namespace Assignment_4.Services
         /// <returns>Returns the product of all the numbers.</returns>
         public double Multiply(params double[] operands)
         {
-            checkForInvalidAndNullOrEmptyValuesForOperands(operands);
-
             double result = 1;
 
             foreach(double operand in operands)
@@ -79,8 +73,6 @@ namespace Assignment_4.Services
         /// <returns>Returns the quotient of all the numbers.</returns>
         public double Divide(params double[] operands)
         {
-            checkForInvalidAndNullOrEmptyValuesForOperands(operands);
-
             double result = 1;
 
             int counter = 1;
@@ -99,23 +91,6 @@ namespace Assignment_4.Services
             }
 
             return result;
-        }
-
-        /// <summary>
-        /// Takes the array of operands passed into the method, and checks to ensure that the array is not empty/null, and that the input is able to be of type double.
-        /// </summary>
-        /// <param name="operands">An array of double type numeric values.</param>
-        [ExcludeFromCodeCoverage]
-        private static void checkForInvalidAndNullOrEmptyValuesForOperands(double[] operands)
-        {
-            double toDouble = 0;
-            string input = Convert.ToString(operands);
-            bool canConvert = double.TryParse(input, out toDouble);
-
-            if (string.IsNullOrEmpty(input) || canConvert == false)
-            {
-                Console.WriteLine("You may only have numeric values of type double entered, and no null/empty values accepted, please try again");
-            }
         }
     }
 }
